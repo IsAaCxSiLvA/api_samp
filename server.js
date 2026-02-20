@@ -19,16 +19,17 @@ async function atualizarServidor() {
       timeout: 5000
     });
 
+    // Formato correto que o APK espera
     const jsonData = {
-      consulta: [
+      query: [
         {
-          numero: 1,
-          nome: data.hostname,
+          number: 1,
+          name: data.hostname,
           ip: data.address,
-          porto: data.port,
+          port: data.port,
           online: data.online,
           maxplayers: data.maxplayers,
-          senha: data.passworded || false
+          password: data.passworded || false
         }
       ]
     };
@@ -40,15 +41,15 @@ async function atualizarServidor() {
   } catch (err) {
 
     const offlineData = {
-      consulta: [
+      query: [
         {
-          numero: 1,
-          nome: "Gold City Roleplay",
+          number: 1,
+          name: "Gold City Roleplay",
           ip: SERVER_IP,
-          porto: SERVER_PORT,
+          port: SERVER_PORT,
           online: 0,
           maxplayers: 0,
-          senha: false
+          password: false
         }
       ]
     };
