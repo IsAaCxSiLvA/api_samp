@@ -1,0 +1,13 @@
+{
+  "consulta": [
+    {
+      "numero": 1,
+      "nome": "Gold City | (Atualizacao) 14/04/2025",
+      "ip": "191.96.224.79",
+      "porto": 7897,
+      "online": 0,
+      "maxplayers": 100,
+      "senha": false
+    }
+  ]
+}

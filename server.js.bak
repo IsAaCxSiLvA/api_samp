@@ -1,0 +1,58 @@
+const express = require('express');
+const Query = require("best-samp-query");
+const fs = require("fs");
+
+const app = express();
+
+// 🔥 ESSA LINHA LIBERA O JSON NA WEB
+app.use(express.static(__dirname));
+
+const SERVER_IP = "191.96.224.79";
+const SERVER_PORT = 7897;
+
+// Função que atualiza o JSON
+async function atualizarServidor() {
+  try {
+    const data = await Query({
+      host: SERVER_IP,
+      port: SERVER_PORT,
+      timeout: 5000
+    });
+
+    const jsonData = {
+      nome: data.hostname,
+      ip: data.address,
+      porta: data.port,
+      jogadores: data.online,
+      maxplayers: data.maxplayers,
+      gamemode: data.gamemode,
+      mapa: data.mapname,
+      atualizado_em: new Date()
+    };
+
+    fs.writeFileSync("servidors.json", JSON.stringify(jsonData, null, 2));
+
+    console.log("JSON atualizado com sucesso 🔥");
+
+  } catch (err) {
+    const offlineData = {
+      nome: "Gold City",
+      status: "offline",
+      atualizado_em: new Date()
+    };
+
+    fs.writeFileSync("servidors.json", JSON.stringify(offlineData, null, 2));
+
+    console.log("Servidor offline ❌");
+  }
+}
+
+// Atualiza a cada 30 segundos
+setInterval(atualizarServidor, 30000);
+
+// Atualiza quando inicia
+atualizarServidor();
+
+app.listen(3000, () => {
+  console.log("API rodando na porta 3000 🔥");
+});
