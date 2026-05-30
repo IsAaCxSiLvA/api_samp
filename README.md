@@ -1,20 +1,44 @@
----
+# API SAMP
 
-# 👨‍💻 Créditos
+API em JavaScript para trabalhar com informacoes relacionadas a servidores SA-MP.
 
-<div align="center">
+## Visao geral
 
-Projeto desenvolvido por **snep-isc** ⚡
+Este repositorio faz parte dos projetos da conta **snep-isc**. A ideia e manter o codigo organizado, documentado e facil de continuar evoluindo.
 
-💻 Full Stack
- 
+## Funcionalidades
 
-</div>
+- Servidor Node.js
+- Arquivos JSON para dados de servidores
+- Base simples para consultas e integracoes
 
----
+## Tecnologias
 
-<div align="center">
+- JavaScript
+- Node.js
+- JSON
 
-⭐ Caso goste do projeto, deixe uma estrela no repositório.
+## Como usar
 
-</div>
+Clone o repositorio:
+
+``bash
+git clone https://github.com/snep-isc/api_samp.git
+cd api_samp
+``
+
+Comandos ou passos principais:
+
+- `npm install`
+- `node server.js`
+
+## Estrutura
+
+A estrutura pode mudar conforme o projeto evolui. Consulte os arquivos e pastas do repositorio para entender a organizacao atual.
+
+## Autor
+
+Feito por **snep-isc**.
+
+- GitHub: https://github.com/snep-isc
+- Repositorio: https://github.com/snep-isc/api_samp
